@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://portadaalta.mobi/cursos/mod/page/view.php?id=979 -->
+<html dir="ltr" lang="es" xml:lang="es" class="yui3-js-enabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Acceso a Datos: Envío de emails con Laravel 5.5</title>
+    <link rel="shortcut icon" href="https://portadaalta.mobi/cursos/theme/image.php/klass/theme/1512394880/favicon">
+    
+<meta name="keywords" content="moodle, Acceso a Datos: Envío de emails con Laravel 5.5">
+<link rel="stylesheet" type="text/css" href="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/yui_combo.php"><script charset="utf-8" id="yui_3_17_2_1_1521111082338_8" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/yui_combo(1).php" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1521111082338_18" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/yui_combo(2).php" async=""></script><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/all">
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/portadaalta.mobi\/cursos","sesskey":"laWbnXirio","themerev":"1512394880","slasharguments":1,"theme":"klass","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1505409209","admin":"admin","svgicons":true,"usertimezone":"Europa\/Madrid","contextid":1673};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/portadaalta.mobi\/cursos\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/portadaalta.mobi\/cursos\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/portadaalta.mobi\/cursos\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/portadaalta.mobi\/cursos\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/portadaalta.mobi\/cursos\/theme\/yui_combo.php?m\/1505409209\/","combine":true,"comboBase":"https:\/\/portadaalta.mobi\/cursos\/theme\/yui_combo.php?","ext":false,"root":"m\/1505409209\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader","moodle-core-event"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-qtype_ddimageortext-form":{"requires":["moodle-qtype_ddimageortext-dd","form_filepicker"]},"moodle-qtype_ddimageortext-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-qtype_ddmarker-dd":{"requires":["node","event-resize","dd","dd-drop","dd-constrain","graphics"]},"moodle-qtype_ddmarker-form":{"requires":["moodle-qtype_ddmarker-dd","form_filepicker","graphics","escape"]},"moodle-qtype_ddwtos-dd":{"requires":["node","dd","dd-drop","dd-constrain"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-quizquestionbank":{"requires":["base","event","node","io","io-form","yui-later","moodle-question-qbankmanager","moodle-core-notification-dialogue"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-randomquestion":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-theme_archaius-archaius":{"requires":["base"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_html-button":{"requires":["moodle-editor_atto-plugin","event-valuechange"]},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/portadaalta.mobi\/cursos\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/portadaalta.mobi\/cursos\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1505409209\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/portadaalta.mobi\/cursos\/lib\/javascript.php\/1505409209\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/portadaalta.mobi\/cursos\/lib\/javascript.php\/1505409209\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/mathjax\/2.7.1\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    config: ["Accessible.js", "Safe.js"],
+    errorSettings: { message: ["!"] },
+    skipStartupTypeset: true,
+    messageStyle: "none"
+});
+</script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="core/first" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/first.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jqueryprivate" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/jquery-private.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/jquery-3.1.0.min.js"></script></head>
+
+<body id="page-mod-page-view" class="format-topics  path-mod path-mod-page safari dir-ltr lang-es yui-skin-sam yui3-skin-sam portadaalta-mobi--cursos pagelayout-incourse course-4 context-1673 cmid-979 category-4  jsenabled">
+
+<div id="page-wrapper">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="https://portadaalta.mobi/cursos/mod/page/view.php?id=979#maincontent">Saltar a contenido principal</a>
+</div><script type="text/javascript" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/yui_combo(3).php"></script><script type="text/javascript" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/jquery-3.1.0.min(1).js"></script>
+<script type="text/javascript" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/javascript-static.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <header id="header" role="banner" class="pos-f-t navbar navbar-full navbar-light bg-faded navbar-static-top moodle-has-zindex">
+    
+        <div class="container navbar-nav">
+    
+            <div data-region="drawer-toggle">
+                <button aria-expanded="false" aria-controls="nav-drawer" type="button" class="btn pull-xs-left m-r-1 btn-secondary" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><span aria-hidden="true" class="hidden-xl-down">☰</span><span class="sr-only hidden-xl-down">Expandir</span>
+    			<span aria-hidden="true"> </span>
+    		    <span aria-hidden="true"> </span>
+    		    <span aria-hidden="true"> </span>
+    			</button>
+            </div>
+    
+            <!-- user_menu -->
+            <div class="usermenu"><div class="action-menu moodle-actionmenu nowrap-items" id="action-menu-1" data-enhance="moodle-core-actionmenu">
+
+        <div class="menubar" id="action-menu-1-menubar" role="menubar">
+
+            <div class="dropdown d-inline">
+    <a href="https://portadaalta.mobi/cursos/mod/page/view.php?id=979#" class="dropdown-toggle" id="dropdown-1" title="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="userbutton"><span class="usertext">Juan Francisco Benítez López</span><span class="avatars"><span class="avatar current"><img src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/f2_white" alt="Imagen de Juan Francisco Benítez López" title="Imagen de Juan Francisco Benítez López" class="userpicture defaultuserpic" width="35" height="35" role="presentation"></span></span></span><b class="caret"></b></a>
+        <div class="dropdown-menu dropdown-menu-right menu  align-tr-br" id="action-menu-1-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-1" role="menu" data-align="tr-br">
+            <a href="https://portadaalta.mobi/cursos/my/" class="dropdown-item menu-action" role="menuitem" data-title="mymoodle,admin" aria-labelledby="actionmenuaction-1"><i class="icon fa fa-tachometer fa-fw " aria-hidden="true" title="Área personal" aria-label="Área personal"></i><span class="menu-action-text" id="actionmenuaction-1">Área personal</span></a><div class="dropdown-divider"></div><a href="https://portadaalta.mobi/cursos/user/profile.php?id=8" class="dropdown-item menu-action" role="menuitem" data-title="profile,moodle" aria-labelledby="actionmenuaction-2"><i class="icon fa fa-user fa-fw " aria-hidden="true" title="Perfil" aria-label="Perfil"></i><span class="menu-action-text" id="actionmenuaction-2">Perfil</span></a><a href="https://portadaalta.mobi/cursos/grade/report/overview/index.php" class="dropdown-item menu-action" role="menuitem" data-title="grades,grades" aria-labelledby="actionmenuaction-3"><i class="icon fa fa-table fa-fw " aria-hidden="true" title="Calificaciones" aria-label="Calificaciones"></i><span class="menu-action-text" id="actionmenuaction-3">Calificaciones</span></a><a href="https://portadaalta.mobi/cursos/message/index.php" class="dropdown-item menu-action" role="menuitem" data-title="messages,message" aria-labelledby="actionmenuaction-4"><i class="icon fa fa-comment fa-fw " aria-hidden="true" title="Mensajes" aria-label="Mensajes"></i><span class="menu-action-text" id="actionmenuaction-4">Mensajes</span></a><a href="https://portadaalta.mobi/cursos/user/preferences.php" class="dropdown-item menu-action" role="menuitem" data-title="preferences,moodle" aria-labelledby="actionmenuaction-5"><i class="icon fa fa-wrench fa-fw " aria-hidden="true" title="Preferencias" aria-label="Preferencias"></i><span class="menu-action-text" id="actionmenuaction-5">Preferencias</span></a><div class="dropdown-divider"></div><a href="https://portadaalta.mobi/cursos/login/logout.php?sesskey=laWbnXirio" class="dropdown-item menu-action" role="menuitem" data-title="logout,moodle" aria-labelledby="actionmenuaction-6"><i class="icon fa fa-sign-out fa-fw " aria-hidden="true" title="Cerrar sesión" aria-label="Cerrar sesión"></i><span class="menu-action-text" id="actionmenuaction-6">Cerrar sesión</span></a>
+        </div>
+</div>
+
+
+        </div>
+
+</div></div>
+    
+            <!-- navbar_plugin_output -->
+            <div class="popover-region collapsed popover-region-messages" id="nav-message-popover-container" data-userid="8" data-region="popover-region">
+    <div class="popover-region-toggle nav-link" data-region="popover-region-toggle" aria-role="button" aria-controls="popover-region-container-5aaa502a169145aaa502a0f9c213" aria-haspopup="true" aria-label="Mostrar la ventana de mensajes cuando no hay mensajes nuevos" tabindex="0">
+                <i class="icon fa fa-comment fa-fw " aria-hidden="true" title="Mostrar/ocultar menú de mensajes" aria-label="Mostrar/ocultar menú de mensajes"></i>
+        <div class="count-container hidden" data-region="count-container"></div>
+
+    </div>
+    <div id="popover-region-container-5aaa502a169145aaa502a0f9c213" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Ventana de notificación" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Mensajes</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <div class="newmessage-link">
+                <a href="https://portadaalta.mobi/cursos/message/index.php?contactsfirst=1">Nuevo mensaje
+                </a>
+        </div>
+        <div class="hover-tooltip-container">
+                    <a class="mark-all-read-button" href="https://portadaalta.mobi/cursos/mod/page/view.php?id=979#" role="button" title="Marcar todo como leído" data-action="mark-all-read">
+                    <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true" title="Marcar todo como leído" aria-label="Marcar todo como leído"></i></span>
+                    <span class="loading-icon"><img class="icon " alt="Cargando" title="Cargando" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/loading"></span>
+                </a>
+
+    <div class="hover-tooltip">
+        Marcar todo como leído
+    </div>
+</div>
+        <div class="hover-tooltip-container">
+                    <a href="https://portadaalta.mobi/cursos/message/edit.php?id=8" title="Preferencias de mensajes">
+                    <i class="icon fa fa-cog fa-fw " aria-hidden="true" title="Preferencias de mensajes" aria-label="Preferencias de mensajes"></i>
+                </a>
+
+    <div class="hover-tooltip">
+        Preferencias de mensajes
+    </div>
+</div>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="messages" data-region="messages" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" data-region="empty-message" tabindex="0">No hay mensajes en espera</div>
+
+            </div>
+            <span class="loading-icon"><img class="icon " alt="Cargando" title="Cargando" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/loading"></span>
+        </div>
+                <a class="see-all-link" href="https://portadaalta.mobi/cursos/message/index.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Ver todo</div>
+                    </div>
+                </a>
+    </div>
+</div><div class="popover-region collapsed popover-region-notifications" id="nav-notification-popover-container" data-userid="8" data-region="popover-region">
+    <div class="popover-region-toggle nav-link" data-region="popover-region-toggle" aria-role="button" aria-controls="popover-region-container-5aaa502a180ac5aaa502a0f9c214" aria-haspopup="true" aria-label="Mostrar la ventana de notificaciones cuando no hay ninguna" tabindex="0">
+                <i class="icon fa fa-bell fa-fw " aria-hidden="true" title="Mostrar/ocultar menú de notificaciones" aria-label="Mostrar/ocultar menú de notificaciones"></i>
+        <div class="count-container hidden" data-region="count-container"></div>
+
+    </div>
+    <div id="popover-region-container-5aaa502a180ac5aaa502a0f9c214" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Ventana de notificación" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notificaciones</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <div class="hover-tooltip-container">
+                    <a class="mark-all-read-button" href="https://portadaalta.mobi/cursos/mod/page/view.php?id=979#" title="Marcar todo como leído" data-action="mark-all-read" role="button">
+                    <span class="normal-icon"><i class="icon fa fa-check fa-fw " aria-hidden="true" title="Marcar todo como leído" aria-label="Marcar todo como leído"></i></span>
+                    <span class="loading-icon"><img class="icon " alt="Cargando" title="Cargando" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/loading"></span>
+                </a>
+
+    <div class="hover-tooltip">
+        Marcar todo como leído
+    </div>
+</div>
+        <div class="hover-tooltip-container">
+                    <a href="https://portadaalta.mobi/cursos/message/notificationpreferences.php?userid=8" title="Preferencias de notificación">
+                    <i class="icon fa fa-cog fa-fw " aria-hidden="true" title="Preferencias de notificación" aria-label="Preferencias de notificación"></i>
+                </a>
+
+    <div class="hover-tooltip">
+        Preferencias de notificación
+    </div>
+</div>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications" data-region="all-notifications" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">No tienes notificaciones</div>
+
+            </div>
+            <span class="loading-icon"><img class="icon " alt="Cargando" title="Cargando" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/loading"></span>
+        </div>
+                <a class="see-all-link" href="https://portadaalta.mobi/cursos/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Ver todo</div>
+                    </div>
+                </a>
+    </div>
+</div>
+    
+            <!-- search_box -->
+            <span class="hidden-md-down">
+            
+            </span>
+            
+    
+           <nav class="nav navbar-nav hidden-xl-down">
+    		            <a href="https://portadaalta.mobi/cursos/mod/page/view.php?id=979#" class="brand" style="display: none;">Title</a>
+                <p class="navbar-text"><a href="https://portadaalta.mobi/cursos"><i class="fa fa-home"></i> </a></p>
+                <div class="nav-collapse collapse navbar-responsive-collapse">
+                  <p class="navbar-text"><a href="https://portadaalta.mobi/cursos"><i class="fa fa-home"></i> </a></p>
+    			</div>
+                <div class="nav-collapse collapse navbar-responsive-collapse">
+                  <p class="navbar-text"><a href="https://portadaalta.mobi/cursos"><i class="fa fa-home"></i> 0</a></p>
+    			</div>
+    	   
+                
+            </nav>
+        </div>
+    </header>
+    
+    <div class="header-main">
+              <div class="header-main-content">
+                <div class="container">
+                    <div id="logo">
+                    <a href="https://portadaalta.mobi/cursos/?redirect=0" class="navbar-brand has-logo
+                    ">
+                    <span class="logo">
+                        <img src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/portada_mini.jpg" alt="IES Portada">
+                    </span>
+                    </a>
+    				</div>
+                   
+                   
+                    <div class="navbar">
+                                <div class="navbar-inner">
+                                               
+                                  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+    
+                        <div class="collapse navbar-toggleable-md" id="navbarResponsive">
+                                    
+                                    <!-- custom_menu -->
+                    <div class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-5aaa502a18c9b5aaa502a0f9c217" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="https://portadaalta.mobi/cursos/mod/page/view.php?id=979#">
+        Español - Internacional ‎(es)‎
+    </a>
+    <div class="dropdown-menu" aria-labelledby="drop-down-5aaa502a18c9b5aaa502a0f9c217">
+                <a class="dropdown-item" href="https://portadaalta.mobi/cursos/mod/page/view.php?id=979&amp;lang=en" title="English ‎(en)‎">English ‎(en)‎</a>
+                <a class="dropdown-item" href="https://portadaalta.mobi/cursos/mod/page/view.php?id=979&amp;lang=es" title="Español - Internacional ‎(es)‎">Español - Internacional ‎(es)‎</a>
+    </div>
+</div>
+                    <!-- page_heading_menu -->
+                    
+                                    </div>
+                                  </div>
+                                    </div>
+                    
+    
+    			    <div class="top-search hidden-xl-down">
+                    <form action="https://portadaalta.mobi/cursos/course/search.php" method="get">
+                        <input type="text" placeholder="" name="search" value="Search courses">
+                        <input type="submit" value="Search">
+                    </form>
+                    </div>
+                  </div>
+            </div>
+    		
+            <div class="header-main-menubar hidden-xl-down">
+    			<div class="container">
+                              <div class="navbar">
+                                <div class="navbar-inner">
+                                  
+                    			  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
+    
+                    	<div class="collapse navbar-toggleable-md" id="navbarResponsive">
+                                    
+                                    
+                                    </div>
+                                  </div>
+                                    </div>
+              </div>
+            </div>
+          </div>
+
+    <div id="page" class="container">
+        <header id="page-header" class="row"><div class="col-xs-12 p-a-1"><div class="card"><div class="card-block"><div class="pull-xs-right context-header-settings-menu"></div><div class="pull-xs-left"><div class="page-context-header"><div class="page-header-headings"><h1>Acceso a Datos</h1></div></div></div><div class="clearfix w-100 pull-xs-left" id="page-navbar"><div class="breadcrumb-nav"><nav role="navigation">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="https://portadaalta.mobi/cursos/my/">Área personal</a></li>
+                <li class="breadcrumb-item">Mis cursos</li>
+                <li class="breadcrumb-item"><a href="https://portadaalta.mobi/cursos/course/view.php?id=4" title="Acceso a Datos">Acceso a Datos</a></li>
+                <li class="breadcrumb-item"><a href="https://portadaalta.mobi/cursos/course/view.php?id=4#section-5">Tema 5</a></li>
+                <li class="breadcrumb-item"><a href="https://portadaalta.mobi/cursos/mod/page/view.php?id=979" title="Página">Envío de emails con Laravel 5.5</a></li>
+    </ol>
+</nav></div><div class="breadcrumb-button pull-xs-right"></div></div><div id="course-header"></div></div></div></div></header>
+
+        <div id="page-content" class="row">
+            <div id="region-main-box" class="col-xs-12">
+                <section id="region-main">
+                    <div class="card card-block">
+                    <span class="notifications" id="user-notifications"></span>
+                    <div role="main"><span id="maincontent"></span><h2>Envío de emails con Laravel 5.5</h2><div class="box generalbox center clearfix p-y-1"><div class="no-overflow"><h1><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Envío de emails en<span class="nolink"> Laravel</span></span></h1>
+<p><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;"> <a target="_blank" href="https://learninglaravel.net/learn-to-send-emails-using-gmail-and-sendgrid-in-laravel-5">https://laravel.com/docs/5.5/mail</a></span></p>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif;"><a target="_blank" href="https://learninglaravel.net/learn-to-send-emails-using-gmail-and-sendgrid-in-laravel-5">https://learninglaravel.net/learn-to-send-emails-using-gmail-and-sendgrid-in-laravel-5</a></span></p>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif;"><a target="_blank" href="https://learninglaravel.net/learn-to-send-emails-using-gmail-and-sendgrid-in-laravel-5">http://www.serversmtp.com/en/smtp-error</a></span></p>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">&nbsp;</span></p>
+<h2><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Conexión</span></h2>
+<p><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">ssh alumno@alumno.mobi</span><br> <br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">cd /var/www/laraveles/<b>nombreAlumno</b></span><br> <br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">&nbsp;</span></p>
+<h2><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Creación del controlador</span></h2>
+<p><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">php artisan make:controller EmailController</span><br> <br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Añadir la ruta en el fichero routes/api.php:</span></p>
+<pre><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Route::post('/email', 'EmailController@send');</span></pre>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">&nbsp;</span><br> <br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;"> <b>app/Http/Controllers/EmailController.php</b></span></p>
+<pre><span style="font-size: small; font-family: impact;">&lt;?php</span></pre>
+<pre><span style="font-size: small; font-family: impact;">namespace App\Http\Controllers;</span></pre>
+<pre><span style="font-size: small; font-family: impact;">use Illuminate\Http\Request;</span></pre>
+<pre><span style="font-size: small; font-family: impact;">use Illuminate\Support\Facades\Mail;</span></pre>
+<pre><span style="font-size: small; font-family: impact;">use Validator;</span></pre>
+<pre><span style="font-size: small; font-family: impact;">use Exception;</span></pre>
+<pre><br><span style="font-size: small; font-family: impact;">class EmailController extends Controller</span></pre>
+<pre><span style="font-size: small; font-family: impact;">{</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; public function send(Request $request) {</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $validator = Validator::make($request-&gt;all(), [</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 'to' =&gt; 'required|email',</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 'message' =&gt; 'required',</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; ]);</span></pre>
+<pre><br><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if ($validator-&gt;fails()) {</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return response()-&gt;json( ['status' =&gt; false, 'message' =&gt; $validator-&gt;errors()-&gt;getMessages()], 501);</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span></pre>
+<pre><br><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $email =&nbsp; $request-&gt;json()-&gt;all();</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $to = $email['to'];</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $subject = $email['subject'];</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $content = $email['message'];</span></pre>
+<pre><br><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $data = array(</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; 'text' =&gt; $content,</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; );</span></pre>
+<pre><br><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; //resources/views/emails/sendemail.blade.php</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; try {</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; Mail::send('emails.sendemail', $data, function ($message) use ($to, $subject) {</span></pre>
+<pre><span style="font-size: small; font-family: impact;">		$message-&gt;from($to);</span><br><span style="font-size: small; font-family: impact;">		//$message-&gt;from('yourEmail@domain.com', 'mi Nombre');</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $message-&gt;to($to);</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; $message-&gt;subject($subject);</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; });</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; } catch (Exception $exception) {</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return response()-&gt;json(['status' =&gt; false, 'message' =&gt; $exception-&gt;getMessage()], 554);</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; }</span></pre>
+<pre><br><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; return response()-&gt;json(['status' =&gt; true, 'to' =&gt; $to, 'subject' =&gt; $subject, 'content' =&gt; $content, 'message' =&gt; 'Your email has been sent successfully'], 250);</span></pre>
+<pre><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; }</span></pre>
+<pre><span style="font-size: small; font-family: impact;">}</span></pre>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">&nbsp;</span></p>
+<h2><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Creación de la vista</span></h2>
+<pre><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">mkdir resources/views/emails</span><br><br><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;"><b>resources/views/emails/sendemail.blade.php</b></span><br><span style="font-size: small; font-family: impact;">&lt;!DOCTYPE html&gt;</span><br><span style="font-size: small; font-family: impact;">&lt;html lang="es-ES"&gt;</span><br><span style="font-size: small; font-family: impact;">&lt;head&gt;</span><br><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; &lt;meta charset="utf-8"&gt;</span><br><span style="font-size: small; font-family: impact;">&lt;/head&gt;</span><br><span style="font-size: small; font-family: impact;">&lt;body&gt;</span><br><span style="font-size: small; font-family: impact;">&lt;h2&gt;Mensaje desde alumno.mobi&lt;/h2&gt;</span><br><br><span style="font-size: small; font-family: impact;">&lt;div&gt;</span><br><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; Tiene un nuevo mensaje:&lt;br /&gt;</span><br><span style="font-size: small; font-family: impact;">&nbsp;&nbsp;&nbsp; {!! $text !!}</span><br><span style="font-size: small; font-family: impact;">&lt;/div&gt;</span><br><br><span style="font-size: small; font-family: impact;">&lt;/body&gt;</span><br><span style="font-size: small; font-family: arial, helvetica, sans-serif;"><span style="font-family: impact;">&lt;/html&gt;</span> </span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">&nbsp;</span></pre>
+<h2><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Configuración del entorno</span></h2>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif;"><b>.env</b></span><br><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">//uso de cuenta en portadaalta.es</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_DRIVER=smtp</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_HOST=portadaalta.es</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_PORT=25</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_USERNAME=alumno@portadaalta.es</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_PASSWORD=malaga2017</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_ENCRYPTION=null</span><br><br><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">//uso de cuenta en gmail.com</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">//configurar en gmail "Permitir el acceso de aplicaciones menos seguras"</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_DRIVER=smtp</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_HOST=smtp.gmail.com</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_PORT=587</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_USERNAME=minombre@gmail.com</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_PASSWORD=mipassword</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">MAIL_ENCRYPTION=tls</span></p>
+<h2><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Borrar la caché<br></span></h2>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">php artisan config:cache</span></p>
+<h2><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Prueba con POST</span></h2>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Method: POST&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; URL: http://<strong>nombreAlumno</strong>.alumno.mobi/api/email</span><br><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Headers</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Content-Type: application/</span>json</p>
+<p><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">Body</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">{</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">&nbsp; "to": "destinatario@gmail.com",</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">&nbsp; "subject": "Una prueba",</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">&nbsp; "message": "el mensaje escrito en alumno.mobi"</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">}</span><br><span style="font-size: medium; font-family: arial, helvetica, sans-serif;">&nbsp;</span></p></div></div><div class="modified">Última modificación: Sunday, 18 de February de 2018, 09:38</div></div>
+                    
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="nav-drawer" data-region="drawer" class="hidden-print moodle-has-zindex closed" aria-hidden="true" tabindex="-1">
+        <nav class="list-group">
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/course/view.php?id=4" data-key="coursehome">
+                <div class="m-l-0">
+                        Acceso a Datos
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/user/index.php?id=4" data-key="participants">
+                <div class="m-l-0">
+                        Participantes
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/badges/view.php?type=2&amp;id=4" data-key="badgesview">
+                <div class="m-l-0">
+                        Insignias
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/admin/tool/lp/coursecompetencies.php?courseid=4" data-key="2">
+                <div class="m-l-0">
+                        Competencias
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/grade/report/index.php?id=4" data-key="grades">
+                <div class="m-l-0">
+                        Calificaciones
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/course/view.php?id=4#section-0" data-key="26">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">General</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/course/view.php?id=4#section-1" data-key="27">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Tema 1</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/course/view.php?id=4#section-2" data-key="28">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Tema 2</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/course/view.php?id=4#section-3" data-key="29">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Tema 3</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/course/view.php?id=4#section-4" data-key="30">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Tema 4</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action font-weight-bold" href="https://portadaalta.mobi/cursos/course/view.php?id=4#section-5" data-key="31">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Tema 5</span>
+                        </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/course/view.php?id=4#section-7" data-key="32">
+                <div class="m-l-0">
+                        <div class="media">
+                            <span class="media-left">
+                                <i class="icon fa fa-folder fa-fw " aria-hidden="true" title="" aria-label=""></i>
+                            </span>
+                            <span class="media-body">Enlaces</span>
+                        </div>
+                </div>
+            </a>
+        </nav>
+        <nav class="list-group m-t-1">
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/my/" data-key="myhome">
+                <div class="m-l-0">
+                        Área personal
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/?redirect=0" data-key="home">
+                <div class="m-l-0">
+                        Inicio del sitio
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/calendar/view.php?view=month" data-key="calendar">
+                <div class="m-l-0">
+                        Calendario
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/user/files.php" data-key="privatefiles">
+                <div class="m-l-0">
+                        Ficheros privados
+                </div>
+            </a>
+            <div class="list-group-item" data-key="mycourses">
+                <div class="m-l-0">
+                    Mis cursos
+                </div>
+            </div>
+            <a class="list-group-item list-group-item-action " href="https://portadaalta.mobi/cursos/course/view.php?id=4" data-key="4">
+                <div class="m-l-1">
+                        Acceso a Datos
+                </div>
+            </a>
+        </nav>
+    </div>
+</div><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
+<footer id="footer" class="p-y-1 bg-inverse">
+   <div class="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="infoarea">
+                        <div class="footer-logo">
+                            <a href="https://portadaalta.mobi/cursos/?redirect=0">
+                            </a>
+                        </div>
+                        <p>IES Portada</p>
+                     </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="foot-links">
+                        <h5>Info</h5>
+						<ul>
+                           <li><a href="https://moodle.org/" target="_blank">Moodle community</a></li>
+						 </ul>
+                   </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="contact-info">
+                        <h5 class="nopadding">Contáctanos</h5>
+                        <p>c/ Cómpeta, 37, Málaga</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="social-media">
+                    <h5>Get Social</h5>
+                    <ul>
+                            <li class="smedia-01">
+                                <a href="https://www.facebook.com/yourfacebookid" target="_blank">
+                                    <i class="fa fa-facebook-square"></i>
+                                </a>
+                            </li>
+
+                            <li class="smedia-02">
+                                <a href="https://in.pinterest.com/yourpinterestname/" target="_blank">
+                                    <i class="fa fa-pinterest-square"></i>
+                                </a>
+                            </li>
+
+                            <li class="smedia-03">
+                                <a href="https://twitter.com/yourtwittername" target="_blank">
+                                    <i class="fa fa-twitter-square"></i>
+                                </a>
+                            </li>
+
+                            <li class="smedia-04">
+                                <a href="https://www.google.com/+yourgoogleplusid" target="_blank">
+                                   <i class="fa fa-google-plus-square"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-foot">
+        <div class="container">
+                <p>Copyright © 2015 - Developed by <a href="http://lmsace.com/">LMSACE.com</a>. Powered by <a href="https://moodle.org/">Moodle</a></p>
+        </div>
+    </div>
+</footer>
+<!--E.O.Footer-->
+
+<footer>
+
+</footer>
+<script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://portadaalta.mobi/cursos/lib/requirejs.php/1505409209/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://portadaalta.mobi/cursos/lib/javascript.php/1505409209/lib/jquery/jquery-3.1.0.min',
+        jqueryui: 'https://portadaalta.mobi/cursos/lib/javascript.php/1505409209/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://portadaalta.mobi/cursos/lib/javascript.php/1505409209/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/require.min.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://portadaalta.mobi/cursos/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage("es",{
+ "Play": "Reproducción",
+ "Pause": "Pausa",
+ "Current Time": "Tiempo reproducido",
+ "Duration Time": "Duración total",
+ "Remaining Time": "Tiempo restante",
+ "Stream Type": "Tipo de secuencia",
+ "LIVE": "DIRECTO",
+ "Loaded": "Cargado",
+ "Progress": "Progreso",
+ "Fullscreen": "Pantalla completa",
+ "Non-Fullscreen": "Pantalla no completa",
+ "Mute": "Silenciar",
+ "Unmute": "No silenciado",
+ "Playback Rate": "Velocidad de reproducción",
+ "Subtitles": "Subtítulos",
+ "subtitles off": "Subtítulos desactivados",
+ "Captions": "Subtítulos especiales",
+ "captions off": "Subtítulos especiales desactivados",
+ "Chapters": "Capítulos",
+ "You aborted the media playback": "Ha interrumpido la reproducción del vídeo.",
+ "A network error caused the media download to fail part-way.": "Un error de red ha interrumpido la descarga del vídeo.",
+ "The media could not be loaded, either because the server or network failed or because the format is not supported.": "No se ha podido cargar el vídeo debido a un fallo de red o del servidor o porque el formato es incompatible.",
+ "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "La reproducción de vídeo se ha interrumpido por un problema de corrupción de datos o porque el vídeo precisa funciones que su navegador no ofrece.",
+ "No compatible source was found for this media.": "No se ha encontrado ninguna fuente compatible con este vídeo."
+});
+
+    });
+});;
+function legacy_activity_onclick_handler_1(e) { e.halt(); window.open('https://portadaalta.mobi/cursos/mod/url/view.php?id=570&redirect=1', '', 'width=920,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+function legacy_activity_onclick_handler_2(e) { e.halt(); window.open('https://portadaalta.mobi/cursos/mod/url/view.php?id=579&redirect=1', '', 'width=920,height=550,toolbar=no,location=no,menubar=no,copyhistory=no,status=no,directories=no,scrollbars=yes,resizable=yes'); return false; };
+
+require(['jquery'], function($) {
+    $('#single_select5aaa502a0f9c22').change(function() {
+        $('#single_select_f5aaa502a0f9c21').submit();
+    });
+});
+;
+
+require(['jquery', 'message_popup/message_popover_controller'], function($, controller) {
+    var container = $('#nav-message-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+require(['jquery'], function($) {
+    $('#single_select5aaa502a0f9c216').change(function() {
+        $('#single_select_f5aaa502a0f9c215').submit();
+    });
+});
+;
+
+require(['theme_boost/loader']);
+require(['theme_boost/drawer'], function(mod) {
+    mod.init();
+});
+;
+require(["core/notification"], function(amd) { amd.init(1673, []); });;
+require(["core/log"], function(amd) { amd.setConfig({"level":"warn"}); });
+});
+//]]>
+</script>
+<script type="text/javascript" src="./Acceso a Datos_ Envío de emails con Laravel 5.5_files/theme.js"></script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"\u00daltima modificaci\u00f3n","name":"Nombre","error":"Error","info":"Informaci\u00f3n","yes":"S\u00ed","no":"No","cancel":"Cancelar","confirm":"Confirmar","areyousure":"\u00bfEst\u00e0 seguro?","closebuttontitle":"Cerrar","unknownerror":"Error desconocido"},"repository":{"type":"Tipo","size":"Tama\u00f1o","invalidjson":"Cadena JSON no v\u00e1lida","nofilesattached":"No se han adjuntado archivos","filepicker":"Selector de archivos","logout":"Salir","nofilesavailable":"No hay archivos disponibles","norepositoriesavailable":"Lo sentimos, ninguno de sus repositorios actuales puede devolver archivos en el formato solicitado.","fileexistsdialogheader":"El archivo existe","fileexistsdialog_editor":"Un archivo con el mismo nombre ya se ha adjuntado al texto que est\u00e1 editando.","fileexistsdialog_filemanager":"Un archivo con ese nombre ya ha sido adjuntado","renameto":"Cambiar el nombre a \"{$a}\"","referencesexist":"Existen {$a} archivos de alias\/atajos que emplean este archivo como su or\u00edgen","select":"Seleccionar"},"admin":{"confirmdeletecomments":"Est\u00e1 a punto de eliminar comentarios, \u00bfest\u00e1 seguro?","confirmation":"Confirmaci\u00f3n"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"es"});
+});
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random5aaa502a0f9c218'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5aaa502a0f9c218'); });
+})();
+//]]>
+</script>
+</body></html>
